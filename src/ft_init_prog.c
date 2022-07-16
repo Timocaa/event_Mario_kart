@@ -6,7 +6,7 @@
 /*   By: tlafont <tlafont@student.42angouleme.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 15:27:31 by tlafont           #+#    #+#             */
-/*   Updated: 2022/07/15 17:00:13 by tlafont          ###   ########.fr       */
+/*   Updated: 2022/07/16 12:06:09 by tlafont          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,25 @@ int	ft_init_img(t_var *v)
 	if (!v->res.img)
 		return (free(v->mlx), free(v->back), free(v->game.img), free(v->tar),
 				free(v->img), free(v), 0);
+	v->end.img = (void **)malloc(sizeof(void *) * 5);
+	if (!v->end.img)
+		return (free(v->mlx), free(v->back), free(v->game.img), free(v->tar),
+				free(v->img), free(v->end.img), free(v), 0);
 	ft_open_img(v);
 	return (1);
 }
+/*
+void	ft_update_nb_t(t_var *v)
+{
+	if (v->res.total < v->tar[0])
+		v->end.nb_t = 0;
+	else if (v->res.total >= v->tar[0])
+		v->end.nb_t = 1;
+	else if (v->res.total >= v->tar[1])
+		v->end.nb_t = 2;
+	else if (v->res.total >= v->tar[2])
+		v->end.nb_t = 3;
+	else if (v->res.total >= v->tar[3])
+		v->end.nb_t = 4;
+	ft_printf("%d\n", v->end.nb_t);
+}*/

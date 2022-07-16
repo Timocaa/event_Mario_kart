@@ -6,7 +6,7 @@
 /*   By: tlafont <tlafont@student.42angouleme.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 15:11:53 by tlafont           #+#    #+#             */
-/*   Updated: 2022/07/15 17:01:13 by tlafont          ###   ########.fr       */
+/*   Updated: 2022/07/16 10:39:56 by tlafont          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int	ft_close(t_var *vars)
 	free(vars->res.img);
 	free(vars->tar);
 	free(vars->img);
+	free(vars->end.img);
 	free(vars);
 	exit(1);
 	return (0);
@@ -47,7 +48,10 @@ void	ft_destroy_img(t_var *v)
 		if (i <= 3)
 			mlx_destroy_image(v->mlx, v->back[i]);
 		if (i <= 4)
+		{
 			mlx_destroy_image(v->mlx, v->img[i]);
+			mlx_destroy_image(v->mlx, v->end.img[i]);
+		}
 		mlx_destroy_image(v->mlx, v->game.img[i]);
 		mlx_destroy_image(v->mlx, v->res.img[i]);
 	}

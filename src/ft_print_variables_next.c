@@ -6,7 +6,7 @@
 /*   By: tlafont <tlafont@student.42angouleme.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 11:29:15 by tlafont           #+#    #+#             */
-/*   Updated: 2022/07/15 17:54:14 by tlafont          ###   ########.fr       */
+/*   Updated: 2022/07/16 12:40:19 by tlafont          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,4 +82,22 @@ void	ft_put_img_tar(t_var *v , int t)
 	while (++i < 5000)
 		mlx_put_image_to_window(v->mlx, v->win, v->img[t], 0, 0);
 	v->t++;
+}
+
+void	ft_print_end(t_var *v)
+{
+	int	i;
+
+	i = -1;
+	v->cur = 6;
+	if (v->t == 0)
+		mlx_put_image_to_window(v->mlx, v->win, v->img[0], 0, 0);
+	else
+	{
+		mlx_put_image_to_window(v->mlx, v->win, v->end.img[0], 0, 0);
+		while (++i < v->t)
+		{
+			mlx_put_image_to_window(v->mlx, v->win, v->end.img[i + 1], 120, 200 + (i * 40));
+		}
+	}
 }

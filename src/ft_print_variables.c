@@ -6,7 +6,7 @@
 /*   By: tlafont <tlafont@student.42angouleme.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 10:10:40 by tlafont           #+#    #+#             */
-/*   Updated: 2022/07/15 17:59:39 by tlafont          ###   ########.fr       */
+/*   Updated: 2022/07/16 12:28:04 by tlafont          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,16 @@ void	ft_print_progress(t_var *v)
 {
 	v->cur = 0;
 	ft_print_achiev(v);
-	mlx_put_image_to_window(v->mlx, v->win, v->back[0], 0, 0);
-	ft_print_nb_game(v);
-	ft_print_targets(v);
-	ft_print_target_bar(v);
+	if (v->game.game > v->game.max)
+	{
+		ft_print_achiev(v);
+		ft_print_end(v);
+	}
+	else
+	{
+		mlx_put_image_to_window(v->mlx, v->win, v->back[0], 0, 0);
+		ft_print_nb_game(v);
+		ft_print_targets(v);
+		ft_print_target_bar(v);
+	}
 }
