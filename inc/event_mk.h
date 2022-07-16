@@ -6,7 +6,7 @@
 /*   By: tlafont <tlafont@student.42angouleme.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 14:53:50 by tlafont           #+#    #+#             */
-/*   Updated: 2022/07/16 12:20:36 by tlafont          ###   ########.fr       */
+/*   Updated: 2022/07/16 13:42:09 by tlafont          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ typedef struct s_end
 
 typedef struct s_game
 {
-	int	max;
-	int	game;
+	int		max;
+	int		game;
 	void	**img;
 }	t_game;
 
@@ -70,7 +70,7 @@ void	ft_open_img(t_var *v);
 void	ft_open_game(t_var *v);
 void	ft_open_res(t_var *v);
 void	ft_open_tar(t_var *v);
-void	ft_open_end(t_var * v);
+void	ft_open_end(t_var *v);
 //--------------------- fct print   ---------------------
 void	ft_print_nb_game(t_var *v);
 void	ft_print_targets(t_var *v);

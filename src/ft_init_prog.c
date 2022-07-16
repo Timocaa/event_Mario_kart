@@ -6,7 +6,7 @@
 /*   By: tlafont <tlafont@student.42angouleme.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 15:27:31 by tlafont           #+#    #+#             */
-/*   Updated: 2022/07/16 12:06:09 by tlafont          ###   ########.fr       */
+/*   Updated: 2022/07/16 13:45:51 by tlafont          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,15 +60,15 @@ int	ft_init_img(t_var *v)
 	v->game.img = (void **)malloc(sizeof(void *) * 10);
 	if (!v->game.img)
 		return (free(v->mlx), free(v->back), free(v->tar), free(v->img),
-				free(v), 0);
+			free(v), 0);
 	v->res.img = (void **)malloc(sizeof(void *) * 10);
 	if (!v->res.img)
 		return (free(v->mlx), free(v->back), free(v->game.img), free(v->tar),
-				free(v->img), free(v), 0);
+			free(v->img), free(v), 0);
 	v->end.img = (void **)malloc(sizeof(void *) * 5);
 	if (!v->end.img)
 		return (free(v->mlx), free(v->back), free(v->game.img), free(v->tar),
-				free(v->img), free(v->end.img), free(v), 0);
+			free(v->img), free(v->end.img), free(v), 0);
 	ft_open_img(v);
 	return (1);
 }

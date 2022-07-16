@@ -6,7 +6,7 @@
 /*   By: tlafont <tlafont@student.42angouleme.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 12:18:44 by tlafont           #+#    #+#             */
-/*   Updated: 2022/07/16 11:03:17 by tlafont          ###   ########.fr       */
+/*   Updated: 2022/07/16 13:44:44 by tlafont          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_update_game(int keycode, t_var *v)
 {
 	if (keycode == XK_Escape)
 		ft_close(v);
-	if ((v->cur >= 0  && v->cur <= 4) && keycode == XK_Return)
+	if ((v->cur >= 0 && v->cur <= 4) && keycode == XK_Return)
 	{
 		v->cur++;
 		v->key = 0;
@@ -82,11 +82,14 @@ void	ft_update_print_score(t_var *v)
 	while (++i < 4)
 	{
 		if (v->res.res[i] < 10)
-			mlx_put_image_to_window(v->mlx, v->win, v->res.img[v->res.res[i]], x, y + (i * 47));
+			mlx_put_image_to_window(v->mlx, v->win, v->res.img[v->res.res[i]],
+				x, y + (i * 47));
 		else
 		{
-			mlx_put_image_to_window(v->mlx, v->win, v->res.img[v->res.res[i] / 10], x - 10, y + (i * 47));
-			mlx_put_image_to_window(v->mlx, v->win, v->res.img[v->res.res[i] % 10], x, y + (i * 47));
+			mlx_put_image_to_window(v->mlx, v->win,
+				v->res.img[v->res.res[i] / 10], x - 10, y + (i * 47));
+			mlx_put_image_to_window(v->mlx, v->win,
+				v->res.img[v->res.res[i] % 10], x, y + (i * 47));
 		}
 	}
 }
