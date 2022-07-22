@@ -6,7 +6,7 @@
 /*   By: tlafont <tlafont@student.42angouleme.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 10:10:40 by tlafont           #+#    #+#             */
-/*   Updated: 2022/07/16 12:28:04 by tlafont          ###   ########.fr       */
+/*   Updated: 2022/07/19 12:57:19 by tlafont          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,14 @@ void	ft_print_targets(t_var *v)
 	{
 		nb = ft_itoa(v->tar[i]);
 		mlx_string_put(v->mlx, v->win, 590 + (185 * i), 540, 0xffffff, nb);
+		if (i == 0)
+			ft_put_target(v, "BRONZE", i);
+		else if (i == 1)
+			ft_put_target(v, "SILVER", i);
+		else if (i == 2)
+			ft_put_target(v, "GOLD", i);
+		else if (i == 3)
+			ft_put_target(v, "PLATINUM", i);
 		free(nb);
 	}
 }

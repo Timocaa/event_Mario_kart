@@ -6,7 +6,7 @@
 /*   By: tlafont <tlafont@student.42angouleme.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 09:18:26 by tlafont           #+#    #+#             */
-/*   Updated: 2022/07/16 13:48:20 by tlafont          ###   ########.fr       */
+/*   Updated: 2022/07/22 09:42:27 by tlafont          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,12 +74,14 @@ void	ft_open_end(t_var *v)
 	int	pix;
 
 	v->end.img[0] = mlx_xpm_file_to_image(v->mlx, "img/end.xpm", &pix, &pix);
-	v->end.img[1] = mlx_xpm_file_to_image(v->mlx, "img/win_test.xpm",
+	v->end.img[1] = mlx_xpm_file_to_image(v->mlx, "img/win0.xpm",
 			&pix, &pix);
-	v->end.img[2] = mlx_xpm_file_to_image(v->mlx, "img/win_test.xpm",
+	v->end.img[2] = mlx_xpm_file_to_image(v->mlx, "img/win1.xpm",
 			&pix, &pix);
-	v->end.img[3] = mlx_xpm_file_to_image(v->mlx, "img/win_test.xpm",
+	v->end.img[3] = mlx_xpm_file_to_image(v->mlx, "img/win2.xpm",
 			&pix, &pix);
-	v->end.img[4] = mlx_xpm_file_to_image(v->mlx, "img/win_test.xpm",
+	v->end.img[4] = mlx_xpm_file_to_image(v->mlx, "img/win3.xpm",
+			&pix, &pix);
+	v->end.img[5] = mlx_xpm_file_to_image(v->mlx, "img/win4.xpm",
 			&pix, &pix);
 }

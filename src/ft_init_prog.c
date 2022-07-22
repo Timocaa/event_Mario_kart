@@ -6,7 +6,7 @@
 /*   By: tlafont <tlafont@student.42angouleme.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 15:27:31 by tlafont           #+#    #+#             */
-/*   Updated: 2022/07/16 13:45:51 by tlafont          ###   ########.fr       */
+/*   Updated: 2022/07/22 09:40:58 by tlafont          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_check_arg(char *nb_p)
 		ft_error("Error: nb of players must be up to 4 !\n");
 	if (ft_atoi(nb_p) % 4 != 0)
 		ft_error("Error: nb of players must be a multiple of 4 !\n");
-	if (ft_atoi(nb_p) / 4 > 999)
+	if (ft_atoi(nb_p) > 450)
 		ft_error("Error: too many players !\n");
 	return (1);
 }
@@ -65,25 +65,37 @@ int	ft_init_img(t_var *v)
 	if (!v->res.img)
 		return (free(v->mlx), free(v->back), free(v->game.img), free(v->tar),
 			free(v->img), free(v), 0);
-	v->end.img = (void **)malloc(sizeof(void *) * 5);
+	v->end.img = (void **)malloc(sizeof(void *) * 6);
 	if (!v->end.img)
 		return (free(v->mlx), free(v->back), free(v->game.img), free(v->tar),
 			free(v->img), free(v->end.img), free(v), 0);
 	ft_open_img(v);
 	return (1);
 }
-/*
-void	ft_update_nb_t(t_var *v)
+
+void	ft_put_target(t_var *v, char *lvl, int i)
 {
-	if (v->res.total < v->tar[0])
-		v->end.nb_t = 0;
-	else if (v->res.total >= v->tar[0])
-		v->end.nb_t = 1;
-	else if (v->res.total >= v->tar[1])
-		v->end.nb_t = 2;
-	else if (v->res.total >= v->tar[2])
-		v->end.nb_t = 3;
-	else if (v->res.total >= v->tar[3])
-		v->end.nb_t = 4;
-	ft_printf("%d\n", v->end.nb_t);
-}*/
+	int	j;
+	int	k;
+
+	j = 569 + (185 * i);
+	while (++j < 630 + (185 * i))
+	{
+		k = 499;
+		while (++k < 529)
+		{
+			if (i == 0)
+				mlx_pixel_put(v->mlx, v->win, j, k, 0x614e1a);
+			else if (i == 1)
+				mlx_pixel_put(v->mlx, v->win, j, k, 0xc0c0c0);
+			else if (i == 2)
+				mlx_pixel_put(v->mlx, v->win, j, k, 0xd4af37);
+			else if (i == 3)
+				mlx_pixel_put(v->mlx, v->win, j, k, 0xa8a7ae);
+		}
+	}
+	if ( i < 3)
+		mlx_string_put(v->mlx, v->win, 580 + (187 * i), 520, 0xffffff, lvl);
+	else
+		mlx_string_put(v->mlx, v->win, 580 + (183 * i), 520, 0xffffff, lvl);
+}

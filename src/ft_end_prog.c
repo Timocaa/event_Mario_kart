@@ -6,7 +6,7 @@
 /*   By: tlafont <tlafont@student.42angouleme.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 15:11:53 by tlafont           #+#    #+#             */
-/*   Updated: 2022/07/16 10:39:56 by tlafont          ###   ########.fr       */
+/*   Updated: 2022/07/22 09:43:45 by tlafont          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,9 @@ void	ft_destroy_img(t_var *v)
 		if (i <= 3)
 			mlx_destroy_image(v->mlx, v->back[i]);
 		if (i <= 4)
-		{
 			mlx_destroy_image(v->mlx, v->img[i]);
+		if (i <= 5)
 			mlx_destroy_image(v->mlx, v->end.img[i]);
-		}
 		mlx_destroy_image(v->mlx, v->game.img[i]);
 		mlx_destroy_image(v->mlx, v->res.img[i]);
 	}

@@ -6,7 +6,7 @@
 /*   By: tlafont <tlafont@student.42angouleme.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 14:53:50 by tlafont           #+#    #+#             */
-/*   Updated: 2022/07/16 13:42:09 by tlafont          ###   ########.fr       */
+/*   Updated: 2022/07/19 12:07:00 by tlafont          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	ft_destroy_img(t_var *v);
 int		ft_check_arg(char *nb_p);
 int		ft_init_variables(t_var *v, char *nb);
 int		ft_init_img(t_var *v);
-//void	ft_update_nb_t(t_var *v);
+void	ft_put_target(t_var *v, char *lvl, int i);
 
 //-------------------- fct open img --------------------
 void	ft_open_img(t_var *v);

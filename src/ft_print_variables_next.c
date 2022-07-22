@@ -6,7 +6,7 @@
 /*   By: tlafont <tlafont@student.42angouleme.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 11:29:15 by tlafont           #+#    #+#             */
-/*   Updated: 2022/07/16 13:47:07 by tlafont          ###   ########.fr       */
+/*   Updated: 2022/07/22 10:15:49 by tlafont          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,19 +87,24 @@ void	ft_put_img_tar(t_var *v, int t)
 
 void	ft_print_end(t_var *v)
 {
-	int	i;
-
-	i = -1;
 	v->cur = 6;
 	if (v->t == 0)
 		mlx_put_image_to_window(v->mlx, v->win, v->img[0], 0, 0);
 	else
 	{
 		mlx_put_image_to_window(v->mlx, v->win, v->end.img[0], 0, 0);
-		while (++i < v->t)
-		{
-			mlx_put_image_to_window(v->mlx, v->win, v->end.img[i + 1],
-				120, 200 + (i * 40));
-		}
+		mlx_put_image_to_window(v->mlx, v->win, v->end.img[1], 120, 200);
+		if (v->t == 1)
+			mlx_put_image_to_window(v->mlx, v->win, v->end.img[2],
+				120, 240);
+		else if (v->t == 2)
+			mlx_put_image_to_window(v->mlx, v->win, v->end.img[3],
+				120, 240);
+		else if (v->t == 3)
+			mlx_put_image_to_window(v->mlx, v->win, v->end.img[4],
+				120, 240);	
+		else if (v->t == 4)
+			mlx_put_image_to_window(v->mlx, v->win, v->end.img[5],
+				120, 240);
 	}
 }
