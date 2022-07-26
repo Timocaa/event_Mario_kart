@@ -6,7 +6,7 @@
 #    By: tlafont <tlafont@student.42angouleme.      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/23 09:21:47 by tlafont           #+#    #+#              #
-#    Updated: 2022/07/15 11:29:50 by tlafont          ###   ########.fr        #
+#    Updated: 2022/07/22 13:21:02 by tlafont          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -108,7 +108,7 @@ clean:
 fclean:
 			clear
 			@$(MAKE) $(SIL) -C $(DLIB) fclean
-			@$(MAKE) -C $(DMLX) clean
+			@$(MAKE) $(SIL) -C $(DMLX) clean
 			@$(RM) $(RF) $(OBJS)
 			@$(RM) $(RF) $(NAME)
 			@$(RM) $(RF) $(NAMEB)
@@ -117,7 +117,7 @@ fclean:
 re:
 			clear
 			@$(MAKE) $(SIL) -C $(DLIB) fclean
-			@$(MAKE) -C $(DMLX) clean
+			@$(MAKE) $(SIL) -C $(DMLX) clean
 			@$(RM) $(RF) $(OBJS)
 			@$(RM) $(RF) $(NAME)
 			@printf $(CR)$(FRED)"all binaries deleted !\n"$(EOC)$(CLEAR) $@

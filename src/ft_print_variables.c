@@ -41,8 +41,11 @@ void	ft_print_targets(t_var *v)
 {
 	char	*nb;
 	int		i;
+	char	*name;
 
 	i = -1;
+	name = "Birdman";
+	mlx_string_put(v->mlx, v->win, 10, 10, 0xff0000, name);
 	while (++i < 4)
 	{
 		nb = ft_itoa(v->tar[i]);
