@@ -6,7 +6,7 @@
 /*   By: tlafont <tlafont@student.42angouleme.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 15:27:31 by tlafont           #+#    #+#             */
-/*   Updated: 2022/07/22 09:40:58 by tlafont          ###   ########.fr       */
+/*   Updated: 2022/07/26 10:23:30 by tlafont          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ void	ft_put_target(t_var *v, char *lvl, int i)
 				mlx_pixel_put(v->mlx, v->win, j, k, 0xa8a7ae);
 		}
 	}
-	if ( i < 3)
+	if (i < 3)
 		mlx_string_put(v->mlx, v->win, 580 + (187 * i), 520, 0xffffff, lvl);
 	else
 		mlx_string_put(v->mlx, v->win, 580 + (183 * i), 520, 0xffffff, lvl);

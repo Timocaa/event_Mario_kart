@@ -6,7 +6,7 @@
 /*   By: tlafont <tlafont@student.42angouleme.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 11:29:15 by tlafont           #+#    #+#             */
-/*   Updated: 2022/07/22 10:15:49 by tlafont          ###   ########.fr       */
+/*   Updated: 2022/07/26 10:22:32 by tlafont          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ void	ft_print_end(t_var *v)
 				120, 240);
 		else if (v->t == 3)
 			mlx_put_image_to_window(v->mlx, v->win, v->end.img[4],
-				120, 240);	
+				120, 240);
 		else if (v->t == 4)
 			mlx_put_image_to_window(v->mlx, v->win, v->end.img[5],
 				120, 240);

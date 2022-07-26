@@ -6,7 +6,7 @@
 /*   By: tlafont <tlafont@student.42angouleme.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 14:53:50 by tlafont           #+#    #+#             */
-/*   Updated: 2022/07/19 12:07:00 by tlafont          ###   ########.fr       */
+/*   Updated: 2022/07/26 09:49:51 by tlafont          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,5 +89,8 @@ void	ft_update_game_next(int keycode, t_var *v);
 void	ft_recover_score(t_var *v, int nb, int i);
 void	ft_update_print_score(t_var *v);
 void	ft_update_total(t_var *v);
+//------------------- fct update next -------------------
+void	ft_delete_score(t_var *v, int i);
+void	ft_check_score(t_var *v, int i);
 
 #endif

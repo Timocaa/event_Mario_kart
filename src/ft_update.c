@@ -6,7 +6,7 @@
 /*   By: tlafont <tlafont@student.42angouleme.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 12:18:44 by tlafont           #+#    #+#             */
-/*   Updated: 2022/07/16 13:44:44 by tlafont          ###   ########.fr       */
+/*   Updated: 2022/07/26 09:46:14 by tlafont          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	ft_update_game(int keycode, t_var *v)
 
 void	ft_update_game_next(int keycode, t_var *v)
 {
-	if ((v->cur > 0 && v->cur < 5) && v->key < 2)
+	if ((v->cur > 0 && v->cur < 5) && v->key <= 2)
 	{
 		if (keycode == XK_0)
 			ft_recover_score(v, 0, v->cur - 1);
@@ -57,6 +57,8 @@ void	ft_update_game_next(int keycode, t_var *v)
 			ft_recover_score(v, 8, v->cur - 1);
 		if (keycode == XK_9)
 			ft_recover_score(v, 9, v->cur - 1);
+		if (keycode == XK_BackSpace)
+			ft_delete_score(v, v->cur - 1);
 	}
 }
 
@@ -65,8 +67,12 @@ void	ft_recover_score(t_var *v, int nb, int i)
 	if (v->key == 0)
 		v->res.res[i] = nb;
 	if (v->key == 1)
+	{
 		v->res.res[i] = (v->res.res[i] * 10) + nb;
-	v->key++;
+		ft_check_score(v, i);
+	}
+	if (v->key < 2)
+		v->key++;
 	ft_put_scores(v);
 }
 
