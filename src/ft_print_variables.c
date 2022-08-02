@@ -6,7 +6,7 @@
 /*   By: tlafont <tlafont@student.42angouleme.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 10:10:40 by tlafont           #+#    #+#             */
-/*   Updated: 2022/07/19 12:57:19 by tlafont          ###   ########.fr       */
+/*   Updated: 2022/07/29 13:36:29 by tlafont          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,23 +18,14 @@ void	ft_print_nb_game(t_var *v)
 	int	d;
 	int	h;
 
-	if (v->game.game < 10)
-	{
-		u = v->game.game;
-		d = 0;
-		h = 0;
-	}
-	else
-	{
-		u = v->game.game % 10;
-		d = (v->game.game / 10) % 10;
-		h = v->game.game / 100;
-	}
-	mlx_put_image_to_window(v->mlx, v->win, v->game.img[u], 620, 43);
+	ft_calcul_nb_game(v->game.game, &u, &d, &h);
+	mlx_put_image_to_window(v->mlx, v->win, v->game.img[10], 591, 44);
+	mlx_put_image_to_window(v->mlx, v->win, v->game.img[u], 568, 43);
+	ft_print_nb_game_max(v);
 	if (d != 0 || h != 0)
-		mlx_put_image_to_window(v->mlx, v->win, v->game.img[d], 595, 43);
+		mlx_put_image_to_window(v->mlx, v->win, v->game.img[d], 545, 43);
 	if (h != 0)
-		mlx_put_image_to_window(v->mlx, v->win, v->game.img[h], 570, 43);
+		mlx_put_image_to_window(v->mlx, v->win, v->game.img[h], 522, 43);
 }
 
 void	ft_print_targets(t_var *v)
@@ -42,14 +33,18 @@ void	ft_print_targets(t_var *v)
 	char	*nb;
 	int		i;
 	char	*name;
+	char	*pts;
 
 	i = -1;
 	name = "Birdman";
+	pts = "number of remaining points to be made :";
 	mlx_string_put(v->mlx, v->win, 10, 10, 0xff0000, name);
+	mlx_string_put(v->mlx, v->win, 10, 555, 0xffffff, pts);
 	while (++i < 4)
 	{
-		nb = ft_itoa(v->tar[i]);
-		mlx_string_put(v->mlx, v->win, 590 + (185 * i), 540, 0xffffff, nb);
+		nb = ft_itoa(v->tar[i] - v->res.total);
+		if (v->tar[i] - v->res.total >= 0)
+			mlx_string_put(v->mlx, v->win, 570 + (187 * i), 555, 0xffffff, nb);
 		if (i == 0)
 			ft_put_target(v, "BRONZE", i);
 		else if (i == 1)

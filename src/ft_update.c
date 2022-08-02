@@ -6,7 +6,7 @@
 /*   By: tlafont <tlafont@student.42angouleme.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 12:18:44 by tlafont           #+#    #+#             */
-/*   Updated: 2022/07/26 09:46:14 by tlafont          ###   ########.fr       */
+/*   Updated: 2022/08/02 16:40:23 by tlafont          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,15 @@ int	ft_update_game(int keycode, t_var *v)
 		v->key = 0;
 		ft_put_scores(v);
 	}
+	if (v->cur == -1 && keycode == XK_Return)
+	{
+		if (ft_check_nbp(v))
+			ft_init_vars_game(v);
+		else
+			ft_print_nbp(v);
+	}
+	if (v->cur == -1)
+		ft_update_nbp(keycode, v);
 	if (v->cur > 0 && v->cur <= 4)
 		ft_update_game_next(keycode, v);
 	if (v->cur == 5 && keycode == XK_Return)

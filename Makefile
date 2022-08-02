@@ -6,7 +6,7 @@
 #    By: tlafont <tlafont@student.42angouleme.      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/23 09:21:47 by tlafont           #+#    #+#              #
-#    Updated: 2022/07/26 08:31:48 by tlafont          ###   ########.fr        #
+#    Updated: 2022/08/02 20:37:06 by tlafont          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,10 +65,13 @@ SRC	=	main.c \
 		ft_end_prog.c \
 		ft_init_prog.c \
 		ft_open_img.c \
+		ft_open_img_next.c \
 		ft_print_variables.c \
 		ft_update.c \
 		ft_print_variables_next.c \
-		ft_update_next.c
+		ft_print_variables_ter.c \
+		ft_update_next.c \
+		ft_update_ter.c
 
 # ================================================================================
 #------------------------------- Directory source ----------------------------------

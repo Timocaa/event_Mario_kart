@@ -6,7 +6,7 @@
 /*   By: tlafont <tlafont@student.42angouleme.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 09:18:26 by tlafont           #+#    #+#             */
-/*   Updated: 2022/07/22 09:42:27 by tlafont          ###   ########.fr       */
+/*   Updated: 2022/07/29 14:49:33 by tlafont          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	ft_open_img(t_var *v)
 	ft_open_res(v);
 	ft_open_tar(v);
 	ft_open_end(v);
+	ft_open_nbp(v);
 }
 
 void	ft_open_game(t_var *v)
@@ -40,6 +41,7 @@ void	ft_open_game(t_var *v)
 	v->game.img[7] = mlx_xpm_file_to_image(v->mlx, "img/g_7.xpm", &pix, &pix);
 	v->game.img[8] = mlx_xpm_file_to_image(v->mlx, "img/g_8.xpm", &pix, &pix);
 	v->game.img[9] = mlx_xpm_file_to_image(v->mlx, "img/g_9.xpm", &pix, &pix);
+	v->game.img[10] = mlx_xpm_file_to_image(v->mlx, "img/g_s.xpm", &pix, &pix);
 }
 
 void	ft_open_res(t_var *v)
