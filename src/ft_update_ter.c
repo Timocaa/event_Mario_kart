@@ -6,7 +6,7 @@
 /*   By: tlafont <tlafont@student.42angouleme.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 16:12:45 by tlafont           #+#    #+#             */
-/*   Updated: 2022/08/02 20:59:04 by tlafont          ###   ########.fr       */
+/*   Updated: 2022/08/03 08:48:53 by tlafont          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,12 @@ void	ft_put_error(t_var *v, char *err)
 	v->nb_p = 0;
 	v->key = 0;
 	ft_print_nbp(v);
+}
+
+void	ft_update_for_check_nbp(t_var *v)
+{
+	if (ft_check_nbp(v))
+		ft_init_vars_game(v);
+	else
+		ft_print_nbp(v);
 }

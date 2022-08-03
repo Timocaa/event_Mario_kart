@@ -6,7 +6,7 @@
 /*   By: tlafont <tlafont@student.42angouleme.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 14:53:50 by tlafont           #+#    #+#             */
-/*   Updated: 2022/08/02 21:02:10 by tlafont          ###   ########.fr       */
+/*   Updated: 2022/08/03 08:49:14 by tlafont          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,6 +112,7 @@ void	ft_delete_nbp(t_var *v);
 //-------------------- fct update 3 ---------------------
 int		ft_check_nbp(t_var *v);
 void	ft_put_error(t_var *v, char *err);
+void	ft_update_for_check_nbp(t_var *v);
 
 //-------------------------------------------------------
 
