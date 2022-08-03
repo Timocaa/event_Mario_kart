@@ -6,12 +6,16 @@
 /*   By: tlafont <tlafont@student.42angouleme.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 15:27:31 by tlafont           #+#    #+#             */
-/*   Updated: 2022/08/02 21:04:54 by tlafont          ###   ########.fr       */
+/*   Updated: 2022/08/03 11:08:26 by tlafont          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/event_mk.h"
 
+/*
+initialization of the var structure
+and allocation of the tier table to be achieved
+*/
 int	ft_init_variables(t_var *v, char *nb)
 {
 	(void)nb;
@@ -29,6 +33,9 @@ int	ft_init_variables(t_var *v, char *nb)
 	return (1);
 }
 
+/*
+allocation of tables for program sprites
+*/
 int	ft_init_img(t_var *v)
 {
 	v->back = (void **)malloc(sizeof(void *) * 4);
@@ -57,6 +64,9 @@ int	ft_init_img(t_var *v)
 	return (1);
 }
 
+/*
+display of the number of points to reach the levels
+*/
 void	ft_put_target(t_var *v, char *lvl, int i)
 {
 	int	j;
@@ -84,6 +94,10 @@ void	ft_put_target(t_var *v, char *lvl, int i)
 		mlx_string_put(v->mlx, v->win, 580 + (183 * i), 530, 0xffffff, lvl);
 }
 
+/*
+initialization of the step values and variables
+for the beginning of the program
+*/
 void	ft_init_vars_game(t_var *v)
 {
 	v->tar[0] = 23 * v->nb_p;

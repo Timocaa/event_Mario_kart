@@ -6,12 +6,16 @@
 /*   By: tlafont <tlafont@student.42angouleme.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 12:18:44 by tlafont           #+#    #+#             */
-/*   Updated: 2022/08/03 08:49:41 by tlafont          ###   ########.fr       */
+/*   Updated: 2022/08/03 12:13:30 by tlafont          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/event_mk.h"
 
+/*
+function called with Key_hook and which calls the corresponding
+functions according to the situation of the program
+*/
 int	ft_update_game(int keycode, t_var *v)
 {
 	if (keycode == XK_Escape)
@@ -37,6 +41,9 @@ int	ft_update_game(int keycode, t_var *v)
 	return (1);
 }
 
+/*
+retrieves the keyboard input to display the score
+*/
 void	ft_update_game_next(int keycode, t_var *v)
 {
 	if ((v->cur > 0 && v->cur < 5) && v->key <= 2)
@@ -66,6 +73,9 @@ void	ft_update_game_next(int keycode, t_var *v)
 	}
 }
 
+/*
+calculation of the entered score
+*/
 void	ft_recover_score(t_var *v, int nb, int i)
 {
 	if (v->key == 0)
@@ -80,6 +90,9 @@ void	ft_recover_score(t_var *v, int nb, int i)
 	ft_put_scores(v);
 }
 
+/*
+display of the score when entering
+*/
 void	ft_update_print_score(t_var *v)
 {
 	int	x;
@@ -104,6 +117,10 @@ void	ft_update_print_score(t_var *v)
 	}
 }
 
+/*
+calculation of the total score after validation of the entry and
+verification of cheat on the total score
+*/
 void	ft_update_total(t_var *v)
 {
 	int	i;

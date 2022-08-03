@@ -6,12 +6,15 @@
 /*   By: tlafont <tlafont@student.42angouleme.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 14:49:48 by tlafont           #+#    #+#             */
-/*   Updated: 2022/07/29 14:52:55 by tlafont          ###   ########.fr       */
+/*   Updated: 2022/08/03 11:17:03 by tlafont          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/event_mk.h"
 
+/*
+loading sprites for participant numbers and background image
+*/
 void	ft_open_nbp(t_var *v)
 {
 	int	pix;

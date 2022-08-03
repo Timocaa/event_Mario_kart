@@ -6,12 +6,15 @@
 /*   By: tlafont <tlafont@student.42angouleme.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 16:12:45 by tlafont           #+#    #+#             */
-/*   Updated: 2022/08/03 08:48:53 by tlafont          ###   ########.fr       */
+/*   Updated: 2022/08/03 12:31:15 by tlafont          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/event_mk.h"
 
+/*
+function that checks the number of participants during validation 
+*/
 int	ft_check_nbp(t_var *v)
 {
 	if (v->nb_p < 4)
@@ -23,6 +26,9 @@ int	ft_check_nbp(t_var *v)
 	return (1);
 }
 
+/*
+displays the error message for the number of participants
+*/
 void	ft_put_error(t_var *v, char *err)
 {
 	int	i;
@@ -38,6 +44,10 @@ void	ft_put_error(t_var *v, char *err)
 	ft_print_nbp(v);
 }
 
+/*
+function that displays the following window according
+to the entry of the number of participants
+*/
 void	ft_update_for_check_nbp(t_var *v)
 {
 	if (ft_check_nbp(v))

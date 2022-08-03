@@ -6,12 +6,15 @@
 /*   By: tlafont <tlafont@student.42angouleme.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 10:10:40 by tlafont           #+#    #+#             */
-/*   Updated: 2022/07/29 13:36:29 by tlafont          ###   ########.fr       */
+/*   Updated: 2022/08/03 11:26:02 by tlafont          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/event_mk.h"
 
+/*
+display of the digits of the current game number
+*/
 void	ft_print_nb_game(t_var *v)
 {
 	int	u;
@@ -28,6 +31,9 @@ void	ft_print_nb_game(t_var *v)
 		mlx_put_image_to_window(v->mlx, v->win, v->game.img[h], 522, 43);
 }
 
+/*
+display of the tiers and their remaining values
+*/
 void	ft_print_targets(t_var *v)
 {
 	char	*nb;
@@ -57,6 +63,9 @@ void	ft_print_targets(t_var *v)
 	}
 }
 
+/*
+function to display the score entry window
+*/
 void	ft_put_scores(t_var *v)
 {
 	ft_print_achiev(v);
@@ -68,6 +77,9 @@ void	ft_put_scores(t_var *v)
 	ft_print_target_bar(v);
 }
 
+/*
+input line indicator arrow display
+*/
 void	ft_put_arrow(t_var *v)
 {
 	if (v->cur == 1)
@@ -80,6 +92,9 @@ void	ft_put_arrow(t_var *v)
 		mlx_put_image_to_window(v->mlx, v->win, v->back[2], 650, 305);
 }
 
+/*
+function that displays the progress window and/or the level reached
+*/
 void	ft_print_progress(t_var *v)
 {
 	v->cur = 0;

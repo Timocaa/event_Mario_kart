@@ -6,12 +6,15 @@
 /*   By: tlafont <tlafont@student.42angouleme.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 09:18:26 by tlafont           #+#    #+#             */
-/*   Updated: 2022/07/29 14:49:33 by tlafont          ###   ########.fr       */
+/*   Updated: 2022/08/03 11:15:28 by tlafont          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/event_mk.h"
 
+/*
+loading program sprites
+*/
 void	ft_open_img(t_var *v)
 {
 	int	pix;
@@ -27,6 +30,9 @@ void	ft_open_img(t_var *v)
 	ft_open_nbp(v);
 }
 
+/*
+loading the sprites of the numbers for the number of games
+*/
 void	ft_open_game(t_var *v)
 {
 	int	pix;
@@ -44,6 +50,9 @@ void	ft_open_game(t_var *v)
 	v->game.img[10] = mlx_xpm_file_to_image(v->mlx, "img/g_s.xpm", &pix, &pix);
 }
 
+/*
+loading the sprites of the numbers to display the scores
+*/
 void	ft_open_res(t_var *v)
 {
 	int	pix;
@@ -60,6 +69,9 @@ void	ft_open_res(t_var *v)
 	v->res.img[9] = mlx_xpm_file_to_image(v->mlx, "img/s_9.xpm", &pix, &pix);
 }
 
+/*
+oading the sprites of the bearings reached
+*/
 void	ft_open_tar(t_var *v)
 {
 	int	pix;
@@ -71,6 +83,9 @@ void	ft_open_tar(t_var *v)
 	v->img[4] = mlx_xpm_file_to_image(v->mlx, "img/tar4.xpm", &pix, &pix);
 }
 
+/*
+loading sprites for the recapitulative end of program window
+*/
 void	ft_open_end(t_var *v)
 {
 	int	pix;

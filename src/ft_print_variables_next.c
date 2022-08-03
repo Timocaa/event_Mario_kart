@@ -6,12 +6,15 @@
 /*   By: tlafont <tlafont@student.42angouleme.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 11:29:15 by tlafont           #+#    #+#             */
-/*   Updated: 2022/07/28 11:44:25 by tlafont          ###   ########.fr       */
+/*   Updated: 2022/08/03 11:59:01 by tlafont          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/event_mk.h"
 
+/*
+display of the progress bar of the participants' points
+*/
 void	ft_print_target_bar(t_var *v)
 {
 	int	x;
@@ -35,6 +38,10 @@ void	ft_print_target_bar(t_var *v)
 	}
 }
 
+/*
+determine the max value of the abscisses according
+to the level to be reached
+*/
 int	ft_calcul_x_max(t_var *v)
 {
 	int	perc;
@@ -63,6 +70,9 @@ int	ft_calcul_x_max(t_var *v)
 	return ((max * perc) / 100);
 }
 
+/*
+determination of the level reached during the game for its display
+*/
 void	ft_print_achiev(t_var *v)
 {
 	if (v->res.total >= v->tar[0] && v->t == 0)
@@ -75,6 +85,9 @@ void	ft_print_achiev(t_var *v)
 		ft_put_img_tar(v, 4);
 }
 
+/*
+display of the level during the game
+*/
 void	ft_put_img_tar(t_var *v, int t)
 {
 	int	i;
@@ -85,6 +98,9 @@ void	ft_put_img_tar(t_var *v, int t)
 	v->t++;
 }
 
+/*
+display of the recapitulative end of program window
+*/
 void	ft_print_end(t_var *v)
 {
 	v->cur = 6;

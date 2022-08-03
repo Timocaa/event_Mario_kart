@@ -6,12 +6,15 @@
 /*   By: tlafont <tlafont@student.42angouleme.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 08:23:46 by tlafont           #+#    #+#             */
-/*   Updated: 2022/08/02 16:12:25 by tlafont          ###   ########.fr       */
+/*   Updated: 2022/08/03 12:19:30 by tlafont          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/event_mk.h"
 
+/*
+function that calculates the score when entering the Backspace
+*/
 void	ft_delete_score(t_var *v, int i)
 {
 	if (v->res.res[i] < 10)
@@ -31,6 +34,9 @@ void	ft_delete_score(t_var *v, int i)
 	ft_put_scores(v);
 }
 
+/*
+cheat verification function when entering scores
+*/
 void	ft_check_score(t_var *v, int i)
 {
 	int	max;
@@ -52,6 +58,9 @@ void	ft_check_score(t_var *v, int i)
 	}
 }
 
+/*
+retrieves the keyboard entry to display the number of participants
+*/
 void	ft_update_nbp(int keycode, t_var *v)
 {
 	if (v->cur == -1 && v->key <= 3)
@@ -81,6 +90,9 @@ void	ft_update_nbp(int keycode, t_var *v)
 	}
 }
 
+/*
+function that calculates the participant numbers when entering
+*/
 void	ft_recover_nbp(t_var *v, int nb)
 {
 	if (v->key == 0)
@@ -92,6 +104,9 @@ void	ft_recover_nbp(t_var *v, int nb)
 	ft_print_nbp(v);
 }
 
+/*
+function that calculates the participant numbers when entering Backspace
+*/
 void	ft_delete_nbp(t_var *v)
 {
 	if (v->nb_p < 10)
